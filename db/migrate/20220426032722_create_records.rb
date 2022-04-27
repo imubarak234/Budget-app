@@ -3,7 +3,7 @@ class CreateRecords < ActiveRecord::Migration[7.0]
     create_table :records do |t|
       t.string :name
       t.float :amount
-
+      t.references :author, foreign_key: { to_table: 'users' }
       t.timestamps
     end
   end
