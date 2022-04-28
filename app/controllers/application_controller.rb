@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
   protect_from_forgery with: :null_session
 
   before_action :update_allowed_parameters, if: :devise_controller?
@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     if user_signed_in?
       super
-    else
-      redirect_to fronts_path, :notice => 'if you want to add a notice' if request.original_fullpath != fronts_path
-      ## if you want render 404 page
-      ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
+    elsif request.original_fullpath != fronts_path
+      redirect_to fronts_path, notice: 'if you want to add a notice'
     end
+    ## if you want render 404 page
+    ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
   end
 end
