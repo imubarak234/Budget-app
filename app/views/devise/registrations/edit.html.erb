@@ -4,40 +4,80 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :name, class: "form-label", for: "validationName_edit" %><br />
+    <div class="input-group has-validation">
+      <%= f.text_field :name , autofocus: true, autocomplete: "name",id: "validationName_edit", class: "form-control", 
+      required: true, placeholder: "Name"%>
+      <div class="invalid-feedback">
+          Please Enter Name.
+      </div>
+    </div>   
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div class="field">
+    <%= f.label :email, class: "form-label", for: "validationEmail_edit" %><br />
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="inputGroupPrepend">@</span>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",id: "validationEmail_edit", class: "form-control", 
+      required: true, placeholder: "Email"
+      %>
+      <div class="invalid-feedback">
+          Please Enter an Email Address.
+      </div>
+    </div> 
+  </div>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.label :password, class: "form-label", for: "validationCustom03_edit" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" , class: "form-control", id: "validationCustom03_edit",
+    required: true, placeholder: "New Password"%>
+    <div class="invalid-feedback">
+      Please provide Password.
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="field mb-2">
+    <%= f.label :password_confirmation, class: "form-label", for: "confirmations_edit"%><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "confirmations_edit",
+    required: true, placeholder: "New Password" %>
+    <div class="invalid-feedback">
+      Please provide Password.
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Sign up", class: "btn btn-secondary"%>
   </div>
 <% end %>
-
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+

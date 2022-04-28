@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.arrange {
+  justify-content: center;
+  align-items: center;
+}
+ 
+ @font-face {
+  font-family: 'main1';
+  src: url('FontsFree-Net-FontsFree-Net-Proxima-Nova-2.ttf');
+}
+
+ @font-face {
+  font-family: 'main2';
+  src: url('FontsFree-Net-Proxima-Nova-Bold.otf');
+}
+
+.app_name {
+  color: black;
+  font-family: 'Lobster', cursive;
+  font-size: 2.5em;
+}
+
+.links_foot a,
+.links_foot input {
+  font-size: 1.3em;
+  font-weight: 100;
+  border-radius: 3%;
+  width: 85%;
+}
