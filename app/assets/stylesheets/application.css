@@ -14,7 +14,7 @@
  *= require_self
  */
 
- * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,13 +29,13 @@ body {
   justify-content: center;
   align-items: center;
 }
- 
- @font-face {
+
+@font-face {
   font-family: 'main1';
   src: url('FontsFree-Net-FontsFree-Net-Proxima-Nova-2.ttf');
 }
 
- @font-face {
+@font-face {
   font-family: 'main2';
   src: url('FontsFree-Net-Proxima-Nova-Bold.otf');
 }
