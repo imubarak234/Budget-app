@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+
   protect_from_forgery with: :null_session
 
   before_action :update_allowed_parameters, if: :devise_controller?
@@ -12,5 +12,15 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) do |u|
       u.permit(:name, :email, :password, :current_password)
     end
+  end
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    elsif request.original_fullpath != fronts_path
+      redirect_to fronts_path, notice: 'if you want to add a notice'
+    end
+    ## if you want render 404 page
+    ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
   end
 end

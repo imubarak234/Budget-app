@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/user', to: 'user#index'
 
+  get '/fronts', to: 'fronts#index'
+
   resources :logs
 
   devise_for :users, controllers: {
