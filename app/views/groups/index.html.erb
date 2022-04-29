@@ -12,6 +12,78 @@
 
   <body>
     <%= yield %>
-    <h2>Groups</h2>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+      <div class="container-fluid">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link  active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <%= button_to(
+          "Log Out",
+          destroy_user_session_path,
+          class: "btn bnt-primary",
+          method: :delete
+        ) %>
+            </li>
+          </ul>
+        </div>
+        
+        <a class="nav-link lead text-light" href="#">CATAGORIES</a>
+        <a class="nav-link text-light" href="#"><i class="bi bi-search lead"></i></a>
+      </div>
+    </nav>
+    <section class="my-4 h-75">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-4 text-center">
+            <i class="bi bi-search lead " style="font-size: 4rem; color: cornflowerblue;"></i>
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title text-muted">Card title</h5>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-4 text-center">
+            <i class="bi bi-search lead " style="font-size: 4rem; color: cornflowerblue;"></i>
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title text-muted">Card title</h5>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-4 text-center">
+            <i class="bi bi-search lead " style="font-size: 4rem; color: cornflowerblue;"></i>
+          </div>
+          <div class="col-8">
+            <div class="card-body">
+              <h5 class="card-title text-muted">Card title</h5>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="d-flex flex-column links_foot_cat align-items-center w-100 p-3 border">
+      <a href="/groups/new" class="p-2 lead text-decoration-none text-light text-center border">Add a New Category</a>
+    </div>
   </body>
 </html>

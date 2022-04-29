@@ -53,3 +53,13 @@ body {
   border-radius: 3%;
   width: 85%;
 }
+
+.links_foot_cat,
+.links_foot_cat a,
+.links_foot_cat input {
+  background-color: #5fb523;
+  font-size: 1.3em;
+  font-weight: 100;
+  border-radius: 3%;
+  width: 85%;
+}

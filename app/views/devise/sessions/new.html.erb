@@ -4,7 +4,7 @@
     
     <ul class="navbar-nav w-100 d-flex justify-content-between align-items-center">
       <li class="nav-item">
-        <a class="navbar-brand" href="/"><i class="bi bi-arrow-left fa-3x"></i></a>
+        <a class="navbar-brand" href="/"><i class="bi bi-arrow-left lead"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link lead" href="#">LOGIN</a>
@@ -15,7 +15,7 @@
     </ul>
   </div>
 </nav>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "needs-validation w-100 d-flex flex-column justify-content-between h-100 my-4", novalidate: true, id: "session"}) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "needs-validation w-100 d-flex flex-column justify-content-between h-100 mt-3", novalidate: true, id: "session"}) do |f| %>
   <div class="d-flex flex-column">
     <div class="field form-group">
       <div class="input-group has-validation">

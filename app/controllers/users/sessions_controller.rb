@@ -13,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
       set_flash_message!(:notice, :signed_in)
       sign_in(resource_name, resource)
       yield resource if block_given?
-      respond_with resource, location: after_sign_in_path_for(resource)
+      respond_with resource, location: groups_path
 
     else
       flash[:notice] = 'User does not exist.'
@@ -27,7 +27,7 @@ class Users::SessionsController < Devise::SessionsController
     set_flash_message! :notice, :signed_out if signed_out
     yield if block_given?
     # respond_to_on_destroy
-    redirect_to new_user_session_path
+    redirect_to fronts_path
   end
 
   # protected
