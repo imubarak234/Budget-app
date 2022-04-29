@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 
   def new
     @group_new = current_user.groups.new
-    respond_to do | format |
+    respond_to do |format|
       format.html { render :new, locals: { groups: @group_new } }
     end
   end
@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
     respond_to do |format|
       format.html do
         if group_create.save
-          flash[:success] = "Catagory created successfully"
+          flash[:success] = 'Catagory created successfully'
           redirect_to groups_path
         else
           flash.now[:error] = 'Error: Catagory could not be created'
