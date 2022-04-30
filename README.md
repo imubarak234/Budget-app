@@ -66,7 +66,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/imubarak234/Recipe-app-2.0/issues).
+Feel free to check the [issues page](https://github.com/imubarak234/Budget-app/issues).
 
 ## Show your support
 
