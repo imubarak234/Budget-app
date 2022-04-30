@@ -32,10 +32,11 @@ class RecordsController < ApplicationController
           grouping.each do |n|
             Log.create(group_id: n.to_i, record_id: record_create.id) if n.to_i.positive?
           end
-          flash[:success] = 'Transaction created successfully'
+
+          flash[:notice] = 'Transaction created successfully'
           redirect_to group_records_path
         else
-          flash.now[:error] = 'Error: Recipe could not be created'
+          flash[:notice] = 'Error: Recipe could not be created'
           render :new, locals: { records: @record_new }
         end
       end
