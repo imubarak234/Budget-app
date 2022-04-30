@@ -20,6 +20,9 @@
 
 ![Screenshot (113)](https://user-images.githubusercontent.com/71400898/166099032-35ba8686-166d-4b74-8dd8-1660e7ae89d7.png)
 
+## Project Presentations
+
+[Presentation](https://www.loom.com/share/5a608145a40b445dafac30890461546a)
 
 ## Getting Started
 
@@ -75,4 +78,4 @@ Give a ⭐️ if you like this project!
 ## License
 
 This project is [MIT]([./MIT.md](https://github.com/microverseinc/readme-template/blob/master/MIT.md)) licensed.
-The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)[](https://github.com/microverseinc/curriculum-react-redux/blob/main/capstone/react_capstone.md#project-documentation)
+The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
