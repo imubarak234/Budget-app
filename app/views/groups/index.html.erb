@@ -55,7 +55,11 @@
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title text-muted"><%=n.name%></h5>
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title text-muted"><%=n.name%></h5>
+                  <h5 class="card-title"><%=Group.totals(n)%></h5>
+                </div>
+                
                 <p class="card-text"><small class="text-muted">Last updated <%=n.updated_at%></small></p>
               </div>
             </div>
