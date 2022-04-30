@@ -41,7 +41,12 @@
         <a class="nav-link text-light" href="#"><i class="bi bi-search lead"></i></a>
       </div>
     </nav>
-    <section class="my-4 h-75">
+    <div>
+          <p class="notice h4"><%= notice %></p>
+          <p class="alert h4"><%= alert %></p>
+      </div>
+    <section class="h-75 overflow-auto">
+      
       <% @groups.each do | n | %>
         <div class="card mb-3" style="max-width: 540px;" onclick="location.href='groups/<%=n.id%>/records'">
           <div class="row g-0">

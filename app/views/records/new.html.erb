@@ -42,6 +42,10 @@
         
       </div>
     </nav>
+    <div>
+          <p class="notice h5"><%= notice %></p>
+          <p class="alert h5"><%= alert %></p>
+      </div>
     <%= form_with model: @record_new, url: group_records_path, method: :post, class: "h-100 border d-flex flex-column justify-content-between", local: true, scope: :records do |f|  %>
 
       <div class="h-50 d-flex flex-column ">
