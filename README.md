@@ -60,7 +60,8 @@
 
 - Hat tip to anyone whose code was used
 - Inspiration
-- etc
+- [The author of the original design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
+- [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 
 ## Authors
