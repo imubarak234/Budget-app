@@ -14,6 +14,9 @@
     <%= yield %>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
       <div class="container-fluid">
+
+        <a class="navbar-brand" href="/"><i class="bi bi-arrow-left lead"></i></a>
+        <a class="nav-link lead text-light" href="#">TRANSACTIONS</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -37,20 +40,27 @@
           </ul>
         </div>
         
-        <a class="nav-link lead text-light" href="#">CATEGORIES</a>
-        <a class="nav-link text-light" href="#"><i class="bi bi-search lead"></i></a>
+        
       </div>
     </nav>
     <section class="my-4 h-75">
-      <% @groups.each do | n | %>
-        <div class="card mb-3" style="max-width: 540px;" onclick="location.href='groups/<%=n.id%>/records'">
+      <div class="d-flex justify-content-around p-2 mb-2 border">
+        <h3 class="h2 text-muted">Total Amount</h3>
+        <h3 class="h2"><%=@var%></h3>
+      </div>
+      
+      <% @records.each do | n | %>
+        <div class="card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-4 text-center">
-              <i class= "<%=n.icon%>" style="font-size: 4rem; color: cornflowerblue;"></i>
+              <i class= "<%=@group.icon%>" style="font-size: 4rem; color: cornflowerblue;"></i>
             </div>
             <div class="col-8">
               <div class="card-body">
-                <h5 class="card-title text-muted"><%=n.name%></h5>
+                <div class="d-flex justify-content-between">
+                  <h5 class="card-title text-muted"><%=n.name%></h5>
+                  <p class="h4"><%=n.amount%></p>
+                </div>
                 <p class="card-text"><small class="text-muted">Last updated <%=n.updated_at%></small></p>
               </div>
             </div>
@@ -59,7 +69,7 @@
       <% end %>
     </section>
     <div class="d-flex flex-column links_foot_cat align-items-center w-100 p-3 border">
-      <a href="/groups/new" class="p-2 lead text-decoration-none text-light text-center border">Add a New Category</a>
+      <a href="/groups/<%=@group.id%>/records/new" class="p-2 lead text-decoration-none text-light text-center border">Add a New Transaction</a>
     </div>
   </body>
 </html>

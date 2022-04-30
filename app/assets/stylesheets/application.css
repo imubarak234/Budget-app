@@ -63,3 +63,8 @@ body {
   border-radius: 3%;
   width: 85%;
 }
+
+.multiples option {
+  padding: 1em;
+  font-size: 1.1em;
+}

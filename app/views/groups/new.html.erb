@@ -14,6 +14,8 @@
     <%= yield %>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
       <div class="container-fluid">
+        <a class="navbar-brand" href="/"><i class="bi bi-arrow-left lead"></i></a>
+        <a class="nav-link lead text-light" href="#">NEW CATEGORY</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -37,8 +39,6 @@
           </ul>
         </div>
         
-        <a class="nav-link lead text-light" href="#">NEW CATAGORY</a>
-        <a class="nav-link text-light" href="#"><i class="bi bi-search lead"></i></a>
       </div>
     </nav>
     <%= form_with model: @group_new, url: groups_path, method: :post, class: "h-100 border d-flex flex-column justify-content-between", local: true, scope: :groups do |f|  %>

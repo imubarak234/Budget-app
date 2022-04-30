@@ -14,6 +14,9 @@
     <%= yield %>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
       <div class="container-fluid">
+
+        <a class="navbar-brand" href="/groups/<%=params[:group_id]%>/records"><i class="bi bi-arrow-left lead"></i></a>
+        <a class="nav-link lead text-light" href="#">NEW TRANSACTIONS</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -37,29 +40,36 @@
           </ul>
         </div>
         
-        <a class="nav-link lead text-light" href="#">CATEGORIES</a>
-        <a class="nav-link text-light" href="#"><i class="bi bi-search lead"></i></a>
       </div>
     </nav>
-    <section class="my-4 h-75">
-      <% @groups.each do | n | %>
-        <div class="card mb-3" style="max-width: 540px;" onclick="location.href='groups/<%=n.id%>/records'">
-          <div class="row g-0">
-            <div class="col-4 text-center">
-              <i class= "<%=n.icon%>" style="font-size: 4rem; color: cornflowerblue;"></i>
-            </div>
-            <div class="col-8">
-              <div class="card-body">
-                <h5 class="card-title text-muted"><%=n.name%></h5>
-                <p class="card-text"><small class="text-muted">Last updated <%=n.updated_at%></small></p>
-              </div>
-            </div>
-          </div>
+    <%= form_with model: @record_new, url: group_records_path, method: :post, class: "h-100 border d-flex flex-column justify-content-between", local: true, scope: :records do |f|  %>
+
+      <div class="h-50 d-flex flex-column ">
+        <div class = "form-group">
+          <%= f.label :name, for: "names" %><br>
+          <%= f.text_field :name, class: "form-control p-2", id: "names"%>
         </div>
-      <% end %>
-    </section>
-    <div class="d-flex flex-column links_foot_cat align-items-center w-100 p-3 border">
-      <a href="/groups/new" class="p-2 lead text-decoration-none text-light text-center border">Add a New Category</a>
-    </div>
+
+        <div class = "form-group">
+          <%= f.label :amount, for: "amount" %><br>
+          <%= f.text_field :amount, class: "form-control p-2", id: "amount"%>
+        </div>
+
+        <div class="form-group multiples">
+          <%= f.label :Select_Category, for: "amount" %><br>
+          <%= f.select( :group, Group.all.collect {|p| [ p.name, p.id ]}, {},
+          { multiple: true, class: "form-control" })%>
+        </div>
+        
+      </div>
+      
+
+
+      <div class="d-flex flex-column links_foot_cat align-items-center w-100 p-3 border">
+        <%= f.submit "Save", class: "p-2 lead text-decoration-none text-light text-center border"%>
+      </div>
+      
+    <% end %>
+    <div></div>
   </body>
 </html>
