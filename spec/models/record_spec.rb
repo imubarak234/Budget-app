@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Record, type: :model do
-  subject { Record.new(name: "Tester", amount: 23) }
+  subject { Record.new(name: 'Tester', amount: 23) }
 
   before { subject.save }
 
@@ -9,7 +9,7 @@ RSpec.describe Record, type: :model do
     subject.name = nil
     expect(subject).to_not be_valid
   end
-  
+
   it 'Amount should be greater than or equals to 0' do
     subject.amount = -1
     expect(subject).to_not be_valid

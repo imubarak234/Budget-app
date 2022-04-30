@@ -32,7 +32,7 @@ class RecordsController < ApplicationController
           grouping.each do |n|
             Log.create(group_id: n.to_i, record_id: record_create.id) if n.to_i.positive?
           end
-          
+
           flash[:notice] = 'Transaction created successfully'
           redirect_to group_records_path
         else

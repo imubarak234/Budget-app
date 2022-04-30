@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  subject { Group.new(name: "Name_1", icon: "Icons", author_id: "1") }
-  
+  subject { Group.new(name: 'Name_1', icon: 'Icons', author_id: '1') }
+
   before { subject.save }
 
   it 'Name should be present' do

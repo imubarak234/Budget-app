@@ -2,7 +2,7 @@ RSpec.describe 'Group Index', type: :feature do
   before :each do
     User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
 
-    Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
+    Group.create(name: 'first group', icon: 'bi bi-search', author_id: 1)
 
     visit '/users/sign_in'
     fill_in 'Email', with: 'user1@gmail.com'
@@ -13,8 +13,8 @@ RSpec.describe 'Group Index', type: :feature do
   it 'Check for exisiting content' do
     visit '/'
 
-    group_one = Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
-    group_two = Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
+    group_one = Group.create(name: 'first group', icon: 'bi bi-search', author_id: 1)
+    group_two = Group.create(name: 'first group', icon: 'bi bi-search', author_id: 1)
 
     expect(page).to have_content(group_one.name)
     expect(page).to have_content(group_two.name)
