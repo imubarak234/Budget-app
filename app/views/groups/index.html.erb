@@ -43,7 +43,7 @@
     </nav>
     <section class="my-4 h-75">
       <% @groups.each do | n | %>
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3" style="max-width: 540px;" onclick="location.href='groups/<%=n.id%>/records'">
           <div class="row g-0">
             <div class="col-4 text-center">
               <i class= "<%=n.icon%>" style="font-size: 4rem; color: cornflowerblue;"></i>
