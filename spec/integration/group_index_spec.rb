@@ -1,6 +1,6 @@
 RSpec.describe 'Group Index', type: :feature do
   before :each do
-    one = User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
+    User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
 
     Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
 

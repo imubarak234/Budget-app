@@ -1,6 +1,6 @@
 RSpec.describe 'Group New', type: :feature do 
   before :each do
-    one = User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
+    User.create(email: 'user1@gmail.com', password: 'password', name: 'User1')
 
     Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
 
@@ -16,9 +16,6 @@ RSpec.describe 'Group New', type: :feature do
     fill_in 'Name', with: 'testings'
     choose('groups_icon_bi_bi-award-fill')
     click_button 'Save'
-
-    group_one = Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
-    group_two = Group.create(name: "first group", icon: "bi bi-search", author_id: 1)
 
     expect(page).to have_content("Catagory created successfully")
   end
