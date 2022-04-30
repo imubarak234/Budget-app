@@ -7,15 +7,15 @@ Rails.application.routes.draw do
 
   root "groups#index"
 
-  resources :groups do
-    resources :records
+  resources :groups, only: [:index, :new, :create] do
+    resources :records, only: [:index, :new, :create]
   end
 
   get '/user', to: 'user#index'
 
   get '/fronts', to: 'fronts#index'
 
-  resources :logs
+  resources :logs, only: [:index]
 
   devise_for :users, controllers: {
     sessions: 'users/sessions'
