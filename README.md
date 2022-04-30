@@ -24,6 +24,9 @@
 
 [Presentation](https://www.loom.com/share/5a608145a40b445dafac30890461546a)
 
+## Live Demo
+[Link](https://safe-thicket-25090.herokuapp.com/)
+
 ## Getting Started
 
 - Make sure you have [Ruby](https://www.ruby-lang.org/en/documentation/installation/) and [Postgresql](https://www.postgresql.org/download/) installed on your system.
