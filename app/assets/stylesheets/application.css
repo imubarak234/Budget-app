@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.arrange {
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'main1';
+  src: url('FontsFree-Net-FontsFree-Net-Proxima-Nova-2.ttf');
+}
+
+@font-face {
+  font-family: 'main2';
+  src: url('FontsFree-Net-Proxima-Nova-Bold.otf');
+}
+
+.app_name {
+  color: black;
+  font-family: 'Lobster', cursive;
+  font-size: 2.5em;
+}
+
+.links_foot a,
+.links_foot input {
+  font-size: 1.3em;
+  font-weight: 100;
+  border-radius: 3%;
+  width: 85%;
+}
+
+.links_foot_cat,
+.links_foot_cat a,
+.links_foot_cat input {
+  background-color: #5fb523;
+  font-size: 1.3em;
+  font-weight: 100;
+  border-radius: 3%;
+  width: 85%;
+}
+
+.multiples option {
+  padding: 1em;
+  font-size: 1.1em;
+}

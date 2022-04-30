@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <%= yield %>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+      <div class="container-fluid">
+
+        <a class="navbar-brand" href="/groups/<%=params[:group_id]%>/records"><i class="bi bi-arrow-left lead"></i></a>
+        <a class="nav-link lead text-light" href="#">NEW TRANSACTIONS</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link  active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item">
+              <%= button_to(
+          "Log Out",
+          destroy_user_session_path,
+          class: "btn bnt-primary",
+          method: :delete
+        ) %>
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+    <div>
+          <p class="notice h5"><%= notice %></p>
+          <p class="alert h5"><%= alert %></p>
+      </div>
+    <%= form_with model: @record_new, url: group_records_path, method: :post, class: "h-100 border d-flex flex-column justify-content-between", local: true, scope: :records do |f|  %>
+
+      <div class="h-50 d-flex flex-column ">
+        <div class = "form-group">
+          <%= f.label :name, for: "names" %><br>
+          <%= f.text_field :name, class: "form-control p-2", id: "names"%>
+        </div>
+
+        <div class = "form-group">
+          <%= f.label :amount, for: "amount" %><br>
+          <%= f.text_field :amount, class: "form-control p-2", id: "amount"%>
+        </div>
+
+        <div class="form-group multiples">
+          <%= f.label :Select_Category, for: "amount" %><br>
+          <%= f.select( :group, Group.all.collect {|p| [ p.name, p.id ]}, {},
+          { multiple: true, class: "form-control" })%>
+        </div>
+        
+      </div>
+      
+
+
+      <div class="d-flex flex-column links_foot_cat align-items-center w-100 p-3 border">
+        <%= f.submit "Save", class: "p-2 lead text-decoration-none text-light text-center border"%>
+      </div>
+      
+    <% end %>
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body id="front_page">
+    <div>
+        <p class="notice h4"><%= notice %></p>
+        <p class="alert h4"><%= alert %></p>
+    </div>
+    <h2 class="app_name font-weight-bolder text-center">Your Budget App</h2>
+    <div class="d-flex flex-column links_foot align-items-center w-100">
+      <a href="/users/sign_in" class="p-3 lead text-decoration-none bg-primary text-light text-center">Log In</a>
+      <a href="/users/sign_up" class="p-3 lead text-decoration-none text-center text-dark" >Sign Up</a>
+    </div>
+  </body>
+</html>
